@@ -1,10 +1,8 @@
-# UserDefaults
+## UserDefaults
  
-## Shared Preferences
-
 If you have a relatively small collection of key-values that you'd like to save, you should use the UserDefaults. A UserDefaults object points to a file containing key-value pairs and provides simple methods to read and write them. Each UserDefaults file is managed by the framework and can be private or shared.
 
-Bring the recorded data when the application starts.
+Bring the recorded data when the application starts:
 ```swift
 let storedName = UserDefaults.standard.object(forKey: "name")
 let storedSurname = UserDefaults.standard.object(forKey: "surname")
@@ -14,14 +12,14 @@ let storedSurname = UserDefaults.standard.object(forKey: "surname")
         }
     }
 ```
-Set data in key-value type.
+Set data in key-value type:
 ```swift
 UserDefaults.standard.set(textFieldName.text!, forKey: "name")
 UserDefaults.standard.set(textFieldSurname.text, forKey: "surname")
 LabelMessage.text = "Hello \(textFieldName.text! + " " + textFieldSurname.text! + "!")"
 ```
 
-Remove Operation:
+Remove data in key-value type:
 ```swift
 let storedName = UserDefaults.standard.object(forKey: "name")
 let storedSurname = UserDefaults.standard.object(forKey: "surname")      
