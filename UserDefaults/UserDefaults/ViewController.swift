@@ -14,8 +14,8 @@ class ViewController: UIViewController {
         let storedName = UserDefaults.standard.object(forKey: "name")
         let storedSurname = UserDefaults.standard.object(forKey: "surname")
         
-        // EN : If not null, show data.
-        // TR : Eger bos degil ise, verileri goster.
+        // EN : Show the data if it is not empty and the String can be cast.
+        // TR : Eger bos degil ise ve String yapilabiliyorsa verileri goster.
         if let name = storedName as? String{
             if let surname = storedSurname as? String{
                 LabelMessage.text = "Hello " + name + surname + "!"
@@ -42,8 +42,8 @@ class ViewController: UIViewController {
         let storedName = UserDefaults.standard.object(forKey: "name")
         let storedSurname = UserDefaults.standard.object(forKey: "surname")
         
-        // If not null, delete data.
-        // Eger bos degil ise, gelen veriyi sil.
+        // EN : If not null, delete data.
+        // TR : Eger bos degil ise, gelen veriyi sil.
         if (storedName as? String) != nil{
             if (storedSurname as? String) != nil{
                 UserDefaults.standard.removeObject(forKey: "name")
